@@ -1,0 +1,13 @@
+{
+    "client": {
+        "id": "insert_client_id",
+        "github_api_commits": "https://api.github.com/repos/:company/:repository/commits"
+    },
+    "network": {
+        "example": {
+            "NA": "http://example.net",
+            "EU": "http://example.org",
+            "default": "http://example.com"
+        }
+    }
+}
