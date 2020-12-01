@@ -19,8 +19,8 @@ app.use(bodyParser.json())
 app.use(cors())
 
 app.post('/', (req, res) => {
-    let ip = req.headers['x-forwarded-for'] || req.connection.remoteAddress
-    network.getUserGeolocation(ip).then(response => {
+    let ip = req.headers['x-forwarded-for']
+    network.getUserGeolocation(ip.split(",")[0]).then(response => {
         network.getRequestedServer(response, req.body.req, req.body.client_id).then(r => res.send(r)).catch(c => res.send(c))
     })
 })
